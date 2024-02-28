@@ -12,15 +12,15 @@
     
             <h1>Random Push-up Generator</h1>
             
-      <button id="one-button" onclick="getRandom()">1</button>
+      <button id="one-button" class="text-color" onclick="getRandom()">1</button>
 
-      <button id="two-button" onclick="getRandom1()">2</button> 
+      <button id="two-button" class="text-color" onclick="getRandom1()">2</button> 
 
-      <button id="three-button" onclick="getRandom2()">3</button> 
+      <button id="three-button" class="text-color" onclick="getRandom2()">3</button> 
 
-      <button id="four-button" onclick="getRandom3()">4</button> 
+      <button id="four-button" class="text-color" onclick="getRandom3()">4</button> 
 
-      <button id="five-button" onclick="getRandom4()">5</button> 
+      <button id="five-button" class="text-color" onclick="getRandom4()">5</button> 
 
       
     
@@ -137,6 +137,12 @@
         "<p class='text'>" + name14 + "\n" + number14+ "</p>";
 
             generateBtn2.disabled = true;
+
+        let button = document.getElementById("one-button");
+
+        button.addEventListener("click", function() {
+        this.classList.remove("text-color");
+        });
         }
 
         function getRandom2() {
