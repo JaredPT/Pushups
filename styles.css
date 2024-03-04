@@ -7,18 +7,24 @@ body {
 }
 h1{
   color: white;
+  text-align: center;
 }
 
 h4{
   color: white;
+  text-align: center;
+  padding-top: 15%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  
 }
 .text{
-  color: rgb(0, 217, 255);
-
+  color: rgb(0, 238, 255);
+  text-align: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .text-color{
-  color: darkred;
+  color: white;
 }
 
 #clear-button{
@@ -40,8 +46,8 @@ td {
 }
 button {
   --green: #1BFD9C;
-  font-size: 15px;
-  padding: 0.7em 2.7em;
+  font-size: 20px;
+  padding: 0.7em 2em;
   letter-spacing: 0.06em;
   position: relative;
   font-family: inherit;
@@ -49,7 +55,7 @@ button {
   overflow: hidden;
   transition: all 0.3s;
   line-height: 1.4em;
-  border: 2px solid var(--green);
+  border: 3px solid var(--green);
   background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
   color: var(--green);
   box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
@@ -61,6 +67,7 @@ button:hover {
 }
 
 button:before {
+  
   content: "";
   position: absolute;
   left: -4em;
@@ -74,6 +81,15 @@ button:before {
 button:hover:before {
   transform: translateX(15em);
 }
+
+#quote {
+  font-style: italic; 
+  font-size: 24px;
+  padding: 30px; 
+  text-align: center;
+  color:azure;
+} 
+
 /*button {
   padding: 10px 20px;
   font-size: 16px;
