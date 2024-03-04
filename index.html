@@ -1,7 +1,13 @@
+    // Get Total number working in td 7
+    // Add cooler background (perferably animated)
+    // Update colors
+    // Update wording instead of "Clear Cells"
+    // Add inspiration quotes 
+    
     <!DOCTYPE html>
     <html>
     <head>
-      
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +39,8 @@
           <td id ="jared2"></td>
           <td id ="jared3"></td>
           <td id ="jared4"></td>
-          <td id ="jared5"></td>          
+          <td id ="jared5"></td>
+          <td id ="jared6"></td>         
         </tr>
         <tr>
           <td id="skip"><h4>James</h4></td>
@@ -41,7 +48,8 @@
           <td id ="james2"></td>
           <td id ="james3"></td>
           <td id ="james4"></td>
-          <td id ="james5"></td>        
+          <td id ="james5"></td> 
+          <td id ="james6"></td>        
         </tr>
         <tr>
           <td id="skip"><h4>Dre</h4></td>
@@ -50,6 +58,7 @@
           <td id ="dre3"></td>
           <td id ="dre4"></td>
           <td id ="dre5"></td>
+          <td id ="dre6"></td> 
         </tr>
         <tr>
           <td id="skip"><h4>Guest</h4></td>
@@ -58,16 +67,37 @@
           <td id ="guest3"></td>
           <td id ="guest4"></td>
           <td id ="guest5"></td>
+          <td id ="guest6"></td> 
         </tr>
       </table>
 
       <button id="clear-button">Clear Cells</button>
 
+      <p id="quote"></p>
       <script>
         
         // Data arrays
+        
         var numbers = [10, 10, 15, 15, 15, 20, 20, 20, 20, 25, 25, 25, 35, 50];
         var names = ["Normal", "Normal", "Normal", "Normal", "Normal","Wide", "Wide", "Diamond", "Diamond","Diamond","Diamond", "Pike", "Pike", "Pike", "Archer", "Explosive (1/2 reps)", "Cross Body", "Slow Tempo (1/2 reps)"];
+        
+        const quotes = [
+    "Be yourself; everyone else is already taken.", 
+    "You can either be too strong to fail or too weak to try", 
+    "You only live once, but if you do it right, once is enough.",
+    "Be the change that you wish to see in the world.",
+    "Excuses are monuments of nothing, that build bridges to nowhere - Dre",
+    "If you are tired of starting over, don't quit - James Bolander", 
+    "When the cat is away, the mice come out and play - Glenn Sebastion",
+    "The Night is Darkest Right Before the Dawn. And i Promise you, the Dawn is Coming - Harvey Dent",
+    "You either die a Hero or live long enough to see yourself become the Villain - Harvey Dent",
+    "Pressure is a privilege - James Bolander",
+    "I'm usually Drug-Free, but shiiiit I'm with the homies - Kendrick Lamar",
+    "There are no timeouts in real life - Jared K.",
+  
+  ];
+        
+        var j=0;
 
         let clearBtn = document.getElementById("clear-button"); 
         let generateBtn = document.getElementById("one-button");
@@ -77,9 +107,9 @@
         let generateBtn5 = document.getElementById("five-button");
        
        
-        // Get random item from array
         function getRandomNumber() {  
           var index = Math.floor(Math.random() * numbers.length);
+          j += index;
           return numbers[index];
         }
     
@@ -88,6 +118,17 @@
           return names[index];
         }
         
+        function generate() {
+          let randomQuoteIndex = Math.floor(Math.random() * quotes.length);    
+          document.getElementById("quote").innerText = quotes[randomQuoteIndex];
+
+        }
+
+        document.getElementById("one-button").addEventListener("click", generate);
+        document.getElementById("two-button").addEventListener("click", generate);
+        document.getElementById("three-button").addEventListener("click", generate);
+        document.getElementById("four-button").addEventListener("click", generate);
+        document.getElementById("five-button").addEventListener("click", generate);
         
         function getRandom() {
           
@@ -109,9 +150,12 @@
         "<p class='text'>" + name3 + "\n" + number3+ "</p>";
         document.getElementById("guest1").innerHTML = 
         "<p class='text'>" + name4 + "\n" + number4+ "</p>";
+  
+        
 
-            generateBtn.disabled = true;
+        generateBtn.disabled = true;
 
+      
             
         }
 
@@ -136,7 +180,8 @@
         document.getElementById("guest2").innerHTML = 
         "<p class='text'>" + name14 + "\n" + number14+ "</p>";
 
-            generateBtn2.disabled = true;
+        generateBtn2.disabled = true;
+
 
         let button = document.getElementById("one-button");
 
@@ -166,7 +211,9 @@
         document.getElementById("guest3").innerHTML = 
         "<p class='text'>" + name24 + "\n" + number24+ "</p>";
 
-            generateBtn3.disabled = true;
+        generateBtn3.disabled = true;
+
+
         }
 
         function getRandom3() {
@@ -190,7 +237,7 @@
         document.getElementById("guest4").innerHTML = 
         "<p class='text'>" + name34 + "\n" + number34+ "</p>";
 
-            generateBtn4.disabled = true;
+        generateBtn4.disabled = true;
 
             
         }
@@ -216,12 +263,13 @@
         document.getElementById("guest5").innerHTML = 
         "<p class='text'>" + name44 + "\n" + number44+ "</p>";
 
-            generateBtn5.disabled = true;
+        generateBtn5.disabled = true;
 
             
         }
 
-
+ 
+      //When the Clear Cells button is selected
         clearBtn.addEventListener("click", function(){
 
           generateBtn.disabled = false;
@@ -232,6 +280,10 @@
 
 
         let cells = document.querySelectorAll("td");
+        const quoteEl = document.getElementById("quote");
+        
+
+        quoteEl.innerText = "";
 
         cells.forEach(cell => {
 
